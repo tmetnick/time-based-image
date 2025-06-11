@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time-Based Image Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Teagan Metnick</h1>
+  <h2>COP 4813 - Web Applications Programming</h2>
+  <h3>Major: Management Information Systems</h3>
+  <p>Hello! I'm Teagan, and this webpage changes its image based on the time of day.</p>
+  
+  <img id="timeImage" src="" alt="Time-based image" />
+
+  <script>
+    const imageElement = document.getElementById("timeImage");
+    const hour = new Date().getHours();
+
+    if (hour >= 6 && hour < 12) {
+      imageElement.src = "images/morning.jpg";  // local image
+    } else if (hour >= 12 && hour < 18) {
+      imageElement.src = "images/afternoon.jpg";      // local image
+    } else {
+      imageElement.src = "images/nighttime.jpg";    // local image
+    }
+  </script>
+</body>
+</html>
